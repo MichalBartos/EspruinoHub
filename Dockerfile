@@ -1,10 +1,12 @@
-FROM balenalib/rpi-raspbian:latest
+FROM balenalib/raspberrypi4-64
 
-ARG ARCH=armv6l
+ARG ARCH=arm64
 ARG NODE_VERSION=8.17.0
 
-RUN apt-get update \
- && apt-get install -y bluetooth \
+RUN apt-get update
+
+RUN apt-get install apt-utils
+RUN  apt-get install -y bluetooth \
                        bluez \
                        libbluetooth-dev \
                        libudev-dev \
@@ -30,3 +32,4 @@ RUN npm install \
 VOLUME ["/EspruinoHub/log"]
 
 ENTRYPOINT ["node", "index.js"]
+
