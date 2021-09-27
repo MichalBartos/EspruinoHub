@@ -146,7 +146,7 @@ Run with Docker
 
 Build on Raspberry Pi Zero:
 
-    docker build -t espruino/espruinohub:armhf https://github.com/MichalBartos/EspruinoHub.git
+    docker build -t espruino/espruinohub:arm64 https://github.com/MichalBartos/EspruinoHub.git
 
 Run from the directory containing your `config.json`:
 
